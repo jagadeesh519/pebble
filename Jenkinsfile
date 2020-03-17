@@ -11,5 +11,15 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+    stage('Deploy') {
+            agent {
+                docker { image 'tomcat:8.0-alpine' }
+            }
+            steps {
+                ADD *.war /usr/local/tomcat/webapps/
+                EXPOSE 8081
+                CMD ["catalina.sh", "run"]
+        }
     }
+}
 }
