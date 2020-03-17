@@ -16,9 +16,9 @@ pipeline {
                 docker { image 'tomcat:8.0-alpine' }
             }
             steps {
-                ADD *.war /usr/local/tomcat/webapps/
-                
-                CMD ["catalina.sh", "run"]
+              sh ADD *.war /usr/local/tomcat/webapps/
+
+              sh  CMD ["catalina.sh", "run"]
         }
     }
 }
