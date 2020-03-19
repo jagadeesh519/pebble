@@ -9,9 +9,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                sh   'docker build -t pebble .'
 
             }
         }
 }
+
+        stage('Deliver') {
+            steps {
+                sh './test.sh'
+            }
+        }
 }

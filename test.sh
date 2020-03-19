@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-mvn clean package -Dmaven.test.skip=true
-
+docker image pull tomcat:8.0
 docker build -t pebble .
 
 exit
