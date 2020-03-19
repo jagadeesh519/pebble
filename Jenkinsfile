@@ -9,8 +9,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                sh 'docker image pull tomcat:8.0'
-            }
+              }
+            docker {
+                image 'tomcat:8.0'
         }
 }
 
