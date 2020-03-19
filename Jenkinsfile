@@ -3,6 +3,7 @@ pipeline {
         docker {
             image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2'
+            image 'tomcat:8.0'
         }
     }
     stages {
@@ -10,9 +11,7 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package'
               }
-            docker {
-                image 'tomcat:8.0'
-        }
+          
 }
 
 }
