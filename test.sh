@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-. ~/.bash_profile
+set -e
 
 sudo docker image pull tomcat:8.0
 
