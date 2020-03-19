@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
+                sh 'chmod 755 test.sh'
                   sh './test.sh'
               }
 
