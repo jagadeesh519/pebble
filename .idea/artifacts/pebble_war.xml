@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pebble:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>pebble</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="pebble-2.6.7-SNAPSHOT.war">
+      <element id="artifact" artifact-name="pebble:war exploded" />
+    </root>
+  </artifact>
+</component>
