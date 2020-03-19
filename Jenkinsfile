@@ -10,9 +10,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                sh 'sudo docker image pull tomcat:8.0'
                 sh 'chmod 755 test.sh'
-                  
+
               }
 
 
