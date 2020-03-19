@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package'
                 sh   'docker build -t pebble .'
-                sh 'docker run -d --network=host --name=pebble1 -p 8081:8080 --restart=always pebble'
+
             }
         }
 }
