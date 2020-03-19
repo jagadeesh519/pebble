@@ -11,11 +11,13 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package'
               }
-              docker {
-                  image 'tomcat:8.0'
 
-}
 
 }
 }
+   stage('Deliver') {
+        steps {
+            sh './test.sh'
+        }
+    }
 }
