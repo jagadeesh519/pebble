@@ -10,7 +10,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                sh 'chmod 755 test.sh'
+                sh '. ~/.bash_profile'
+                sh 'sudo docker image pull tomcat:8.0'
+                sh 'sudo docker container create --publish 8082:8080 --name pebble tomcat:8.0'
 
               }
 
